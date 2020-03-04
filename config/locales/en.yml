@@ -1,0 +1,53 @@
+en:
+  instagram: Instagram
+  layouts:
+    header:
+      search: "@search"
+      language: "Language"
+      english: "English"
+      vietnamese: "Vietnamese"
+    footer:
+      about_us: "ABOUT US"
+      support: "SUPPORT"
+      press: "PRESS"
+      api: "API"
+      jobs: "JOBS"
+      privacy: "PRIVACY"
+      terms: "TERMS"
+      directory: "DIRECTORY"
+      profiles: "PROFILES"
+      hashtags: "HASHTAGS"
+      language: "LANGUAGE"
+      instagram: " © 2018 INSTAGRAM "
+  shared:
+    error_messages:
+      the_form: "The form"
+      count:
+        one: "%{count} error"
+        other: "%{count} errors"
+  static_pages:
+    title: "Home"
+  users:
+    create:
+      signup_success: "Sign up success!"
+      signup_failed: "Sign up failed!"
+    get_user:
+      not_find_user: "Not find user!"
+    new:
+      title: "Sign up"
+      signup: "Sign up"
+      login: "Log in"
+      email: "Email"
+      fullname: "Full name"
+      username: "User name"
+      choose_file: "Avatar image"
+      password: "Password"
+      password_confirmation: "Password Confirmation"
+      or: "OR"
+      login_via_facebook: "Login via Facebook"
+    show:
+      title: "User"
+      edit_profile: "Edit Profile"
+      posts: "posts"
+      followers: "followers"
+      following: "following"
