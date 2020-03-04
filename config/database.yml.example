@@ -5,7 +5,7 @@ default: &default
   pool: ENV["DB_POOL"]
   host: ENV["DB_HOST"]
   port: ENV["DB_PORT"]
- 
+  
 development:
   <<: *default
    database: instagram_development

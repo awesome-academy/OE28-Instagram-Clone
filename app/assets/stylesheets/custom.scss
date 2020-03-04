@@ -1,0 +1,113 @@
+@import "color";
+
+body,
+html {
+  height: 100%;
+}
+
+.container{
+  max-width: 1000px;
+}
+
+.navbar{
+  border-bottom: 1px solid $rgba000;
+}
+
+.user-section{
+  a{
+    padding-left: 15px;
+  }
+  i.fa{
+    font-size: 22px;
+    color: $d0004;
+  }
+}
+
+.search-form{
+  input{
+    font-size: 13px;
+    text-align: center;
+  }
+}
+
+.footer{
+  font-size: 12px;
+  padding-top: 30px;
+  ul{
+    padding-left: 0;
+    > li{
+      display: inline;
+      padding-right: 15px;
+      color: $d0035;
+    }
+  }
+  p{
+    color: $d999;
+  }
+}
+
+.dropbtn {
+  background-color: $f8f9fa;
+  color: $white;
+  padding: 6px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  color: $d333;
+  border: 1px double $d555;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: $f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px $rgba0002;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: $black;
+  padding: 6px 14px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: $ecd9d9}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: $e3e9f0;
+}
+
+/*Login and signup*/
+.body {
+  max-width: 2000px;
+  display: flex;
+  justify-content: center;
+  height: calc(100% - 60px);
+  width: 100%;
+  background: image-url("Bg4.jpg") no-repeat center;
+  background-size: cover;
+}
+
+
+.login-form {
+  width: 400px;
+  height: fit-content;
+  margin: 60px;
+}
+
+.signup-form {
+  width: 500px;
+  height: fit-content;
+  margin: 60px;
+}

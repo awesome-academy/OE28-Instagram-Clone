@@ -1,0 +1,25 @@
+<% provide :title, t(".title") %>
+<div class="user-profile">
+  <div class="profile row">
+    <div class="col-md-4 avatar">
+      <div class="wrapper">
+        <%= image_tag @user.default_avatar_image %>
+      </div>
+    </div>
+    <div class="col-md-8 basic-info">
+      <div class="user-wrapper">
+        <h2 class="username"><%= @user.username %></h2>
+        <a class="edit-profile">
+          <button><%= t "edit_profile" %></button>
+        </a>
+      </div>
+      <ul class="posts">
+        <li><%= t ".count_posts", count: 12 %></li>
+        <li><%= t ".count_followers", count: 10 %></li>
+        <li><%= t ".count_following", count: 10 %></li>
+      </ul>
+      <h2 class="name"><%= @user.name %></h2>
+      <a class="website"><%= @user.website %>></a>
+    </div>
+  </div>
+</div>
