@@ -22,6 +22,10 @@ class User < ApplicationRecord
   before_save :downcase_email
 
   has_secure_password
+<<<<<<< HEAD
+=======
+  has_one_attached :avatar_image
+>>>>>>> edit_update
 
   class << self
     def digest string
@@ -53,7 +57,11 @@ class User < ApplicationRecord
   def forget
     update remember_digest: nil
   end
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> edit_update
   def default_avatar_image
     Settings.user.default_avt
   end

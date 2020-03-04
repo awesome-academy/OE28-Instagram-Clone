@@ -7,4 +7,7 @@ user:
   email_regex: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i'
   username_regex: !ruby/regexp '/\A[a-zA-Z0-9]+\z/'
   default_avt: "default.jpg"
+  valid_image_types: ["image/jpeg", "image/gif", "image/png"]
+  gender_male: 1
+  gender_female: 0
 favicon_image: "favicon.png"

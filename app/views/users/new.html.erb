@@ -1,7 +1,7 @@
 <% provide :title, t(".title") %>
 <div class="card signup-form">
   <article class="card-body">
-    <%= link_to  t(".login"), "#", class: "float-right btn btn-outline-primary" %>
+    <%= link_to  t(".login"), login_path, class: "float-right btn btn-outline-primary" %>
     <h4 class="card-title mb-4 mt-1"><%= t ".signup" %></h4>
     <hr>
     <%= form_for @user, url: signup_path do |f| %>

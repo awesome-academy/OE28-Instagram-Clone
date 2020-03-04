@@ -2,18 +2,18 @@
 <html>
   <head>
     <title><%= yield :title %></title>
-    <%= render  "layouts/rails_link" %>
+    <%= render "layouts/rails_link" %>
   </head>
   <body>
-    <%= render  "layouts/header" %>
-     <% if user_signed_in? %>
+    <%= render "layouts/header" %>
+    <% if user_signed_in? %>
       <main class="container" >
         <% flash.each do |message_type, message| %>
           <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
         <% end %>
         <%= yield %>
       </main>
-      <%= render  "layouts/footer" %>
+      <%= render "layouts/footer" %>
     <% else %>
       <main class="bg-container" >
         <%= yield %>

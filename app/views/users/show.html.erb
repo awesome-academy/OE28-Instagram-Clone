@@ -1,9 +1,13 @@
-<% provide :title, t(".title") %>
+<% provide :title, @user.name %>
 <div class="user-profile">
   <div class="profile row">
     <div class="col-md-4 avatar">
       <div class="wrapper">
-        <%= image_tag @user.default_avatar_image %>
+        <% if @user.avatar_image.attached? %>
+          <%= image_tag @user.avatar_image, class: "avatar" %>
+        <% else %>
+          <%= image_tag @user.default_avatar_image, class: "avatar" %>
+        <% end %>
       </div>
     </div>
     <div class="col-md-8 basic-info">

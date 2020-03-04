@@ -26,7 +26,8 @@ vi:
         one: "%{count} lỗi"
         other: "%{count} lỗi"
   static_pages:
-    title: "Trang chủ"
+    new:
+      title: "Trang chủ"
   users:
     create:
       signup_success: "Đăng ký thành công!"
@@ -53,15 +54,33 @@ vi:
     show:
       title: "Người dùng"
       edit_profile: "Chỉnh sửa hồ sơ"
-      count_posts:
-        one: "%{count} bài đăng"
-        other: "%{count} bài đăng"
-      count_followers:
-        one: "%{count} người theo dõi bạn"
-        other: "%{count} người theo dõi bạn"
-      count_following:
-        one: "%{count} người mà bạn theo dõi"
-        other: "%{count} người mà bạn theo dõi"
+      posts: bài đăng
+      followers: người theo dõi
+      following: đang theo dõi
+    update:
+      update_succeed: "Cập nhật thành công!"
+      update_failed: "Cập nhật thất bại!"
+    edit:
+      title: "Chỉnh sửa"
+      edit_profile: "Chỉnh sửa hồ sơ"
+      change_password: "Đổi mật khẩu"
+      authorized_application: "Ứng dụng ủy quyền"
+      email_sms: "Email và SMS"
+      manage_contact: "Liên hệ quản lý"
+      privacy_security: "Chính sách và bảo mật"
+      name: "Tên đầy đủ"
+      username: "Tên đại diện"
+      avatar_image: "Ảnh đại diện"
+      website: "Trang web"
+      bio: "Mô tả"
+      email: "Email"
+      phone: "Điện thoại"
+      gender: "Giới tính"
+      submit: "Gửi thay đổi"
+    correct_user:
+      not_allow: "Không cho phép!"
+    logged_in_user:
+      please_log_in: "Vui lòng đăng ký!"
   sessions:
     new:
       username_or_email: Username hoặc email

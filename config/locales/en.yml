@@ -26,7 +26,8 @@ en:
         one: "%{count} error"
         other: "%{count} errors"
   static_pages:
-    title: "Home"
+    new:
+      title: "Home"
   users:
     create:
       signup_success: "Sign up success!"
@@ -53,15 +54,33 @@ en:
     show:
       title: "User"
       edit_profile: "Edit Profile"
-      count_posts:
-        one: "%{count} post"
-        other: "%{count} posts"
-      count_followers:
-        one: "%{count} follower"
-        other: "%{count} followers"
-      count_following:
-        one: "%{count} following"
-        other: "%{count} following"
+      posts: posts
+      followers: followers
+      following: following
+    update:
+      update_succeed: "Update success!"
+      update_failed: "Update failed!"
+    edit:
+      title: "Edit"
+      edit_profile: "Edit Profile"
+      change_password: "Change Password"
+      authorized_application: "Authorized Applications"
+      email_sms: "Email and SMS"
+      manage_contact: "Manage Contacts"
+      privacy_security: "Privacy and Security"
+      name: "Name"
+      username: "User name"
+      avatar_image: "Avatar image"
+      website: "Website"
+      bio: "Bio"
+      email: "Email"
+      phone: "Phone"
+      gender: "Gender"
+      submit: "Submit"
+    correct_user:
+      not_allow: "Not allow!"
+    logged_in_user:
+      please_log_in: "Please log in!"
   sessions:
     new:
       username_or_email: Username or email

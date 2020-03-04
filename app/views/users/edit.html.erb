@@ -1,0 +1,85 @@
+<% provide :title, t(".title") %>
+<div class="user-edit-page">
+  <div class="actions">
+    <%= render "users/menu_left" %>
+  </div>
+ <div class="details">
+    <%= form_for @user, local: true, html: {class: "form-horizontal form-edit-user"} do |f| %>
+      <div class="form-group row">
+        <div class="col-sm-3 col-form-label">
+          <% if @user.avatar_image.attached? %>
+            <%= image_tag @user.avatar_image, class: "avatar" %>
+          <% else %>
+            <%= image_tag @user.default_avatar_image, class: "avatar" %>
+          <% end %>
+        </div>
+        <div class="col-sm-9">
+          <p class="username"><%= @user.username %></p>
+        </div>
+      </div>
+      <div class="custom-file form-group row" style="margin-bottom: 1rem; margin-left: 1rem;">
+        <%= f.label t(".avatar_image"), class: "custom-file-label", for: "avatar_image" %>
+        <%= f.file_field :avatar_image, class: "custom-file-input form-control",
+          id: "avatar_image", accept: Settings.user.valid_image_types.join(",")
+        %>
+      </div>
+      <div class="form-group row">
+        <%= f.label t(".name"), class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label t(".username"), class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= f.text_field :username, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label t(".website"), class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= f.text_field :website, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label t(".bio"), class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= f.text_area :bio, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label t(".email"), class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= f.text_field :email, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label t(".phone"), class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= f.text_field :phone, class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <%= f.label t(".gender"), class: "col-sm-3 col-form-label" %>
+        <div class="col-sm-9">
+          <%= f.select :gender,
+            options_for_select(
+              [["Choose gender", nil],
+              ["Female", Settings.user.gender_female],
+              ["Male", Settings.user.gender_male]],
+              gender(@user)
+            ),
+            class: "custom-select my-1 mr-sm-2"
+          %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-sm-9">
+          <%= f.submit t(".submit"), class: "btn btn-primary" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
