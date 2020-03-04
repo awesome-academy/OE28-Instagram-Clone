@@ -1,3 +1,13 @@
- <% flash.each do |message_type, message| %>
-  <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
+<% if object.errors.any? %>
+  <div id="error_explanation">
+    <div class="alert alert-danger">
+       <%= t ".the_form" %>
+       <%= t ".count", count: object.errors.size %>.
+    </div>
+    <ul>
+    <% object.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
 <% end %>

@@ -1,33 +1,42 @@
+<!--Navigation Bar-->
 <nav class="navbar navbar-light bg-light d-flex">
   <div class="container">
     <div class="logo">
-      <a class="navbar-brand" href="#">
+      <%= link_to root_path, class: "navbar-brand" do %>
         <%= fa_stacked_icon "camera inverse", base: "circle"%>
-        Instagram
-      </a>
+        <%= t "instagram" %>
+      <% end %>
     </div>
     <div class="m-auto">
       <form class="form-inline search-form">
-        <input class="form-control mr-sm-2" type="search" 
-          placeholder=<%= t ".search" %> 
-          aria-label="Search">
+        <input class="form-control mr-sm-2" type="search"
+            placeholder="<%= t ".search" %>"
+            aria-label="Search">
       </form>
     </div>
     <div class="user-section">
       <%= link_to "#" do %>
         <i class="fa fa-compass"></i>
       <% end %>
-      <%= link_to  "#" do %>
+      <%= link_to "#" do %>
         <i class="fa fa-heart"></i>
       <% end %>
       <% if user_signed_in? %>
-        <%= link_to  current_user  do %>
+        <%= link_to current_user  do %>
           <i class="fa fa-user"></i>
         <% end %>
-        <%= link_to "#", method: :delete do %>
+        <%= link_to logout_path, method: :delete do %>
           <i class="fa fa-sign-in"></i>
         <% end %>
       <% end %>
     </div>
+    <div class="dropdown ml-5">
+      <button class="dropbtn"><%= t ".language" %></button>
+      <div class="dropdown-content">
+      <%= link_to t(".english"), locale:"en" %>
+      <%= link_to t(".vietnamese"), locale:"vi" %>
+      </div>
+    </div>
   </div>
 </nav>
+<!--End Navigation Bar-->

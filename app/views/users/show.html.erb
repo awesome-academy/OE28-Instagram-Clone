@@ -1,32 +1,23 @@
-<% provide :title, current_user.name %>
+<% provide :title, @user.name %>
 <div class="user-profile">
   <div class="profile row">
     <div class="col-md-4 avatar">
       <div class="wrapper">
-        <%= image_tag @user.avatar_image %>
+        <%= image_tag @user.default_avatar_image %>
       </div>
     </div>
     <div class="col-md-8 basic-info">
       <div class="user-wrapper">
         <h2 class="username"><%= @user.username %></h2>
-        <% if current_user? @user %>
-          <%= link_to  edit_user_path(current_user), class: "edit-profile" do %>
-            <button><%= t ".edit_profile" %></button>
-          <% end %>
-        <% else %>
-          <%= link_to  "#", class: "edit-profile" do %>
-            <button><%= t ".following" %></button>
-          <% end %>
-        <% end %>
+        <a class="edit-profile">
+          <button><%= t "edit_profile" %></button>
+        </a>
       </div>
-      <%= render  "stat" %>
-      <h2 class="name"><%= current_user.name %></h2>
-      <% if current_user.website %>
-        <%= link_to  current_user.website, path %>
-        <a class="website"></a>
-      <% end %>
+      <%= render "stat" %>
+      <h2 class="name"><%= @user.name %></h2>
+      <a class="website"><%= @user.website %>></a>
     </div>
   </div>
 </div>
-<%= render  "shared/tab" %>
+<%= render "tab" %>
 <hr>

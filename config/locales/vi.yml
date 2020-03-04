@@ -1,2 +1,75 @@
 vi:
   instagram: Instagram
+  layouts:
+    header:
+      search: "@tìm_kiếm"
+      language: "Ngôn ngữ"
+      english: "Tiếng Anh"
+      vietnamese: "Tiếng Việt"
+    footer:
+      about_us: "GIỚI THIỆU"
+      support: "HỖ TRỢ"
+      press: "NHẤN"
+      api: "API"
+      jobs: "CÔNG VIỆC"
+      privacy: "CHÍNH SÁCH"
+      terms: "RIÊNG TƯ"
+      directory: "DANH MỤC"
+      profiles: "HỒ SƠ"
+      hashtags: "DẤU THĂNG"
+      language: "NGÔN NGỮ"
+      instagram: " © 2018 INSTAGRAM "
+  shared:
+    error_messages:
+      the_form: "Biểu mẫu chứa"
+      count:
+        one: "%{count} lỗi"
+        other: "%{count} lỗi"
+  static_pages:
+    title: "Trang chủ"
+  users:
+    create:
+      signup_success: "Đăng ký thành công!"
+      signup_failed: "Đăng ký thất bại!"
+    get_user:
+      not_find_user: "Không tìm thấy người dùng!"
+    new:
+      title: "Đăng ký"
+      signup: "Đăng ký"
+      login: "Đăng nhập"
+      email: "Địa chỉ email"
+      fullname: "Tên đầy đủ"
+      username: "Tên người dùng"
+      choose_file: "Ảnh đại diện"
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
+      or: "HOẶC"
+      login_via_facebook: "Đăng nhập qua Facebook"
+    tab:
+      saved: ĐÃ LƯU
+      tagged: TAGGED
+      posts: ẢNH
+      igtv: IGTV
+    show:
+      title: "Người dùng"
+      edit_profile: "Chỉnh sửa hồ sơ"
+      count_posts:
+        one: "%{count} bài đăng"
+        other: "%{count} bài đăng"
+      count_followers:
+        one: "%{count} người theo dõi bạn"
+        other: "%{count} người theo dõi bạn"
+      count_following:
+        one: "%{count} người mà bạn theo dõi"
+        other: "%{count} người mà bạn theo dõi"
+  sessions:
+    new:
+      username_or_email: Username hoặc email
+      password: Mật khẩu
+      log_in: Đăng nhập 
+      sign_in: Đăng nhập
+      sign_up: Đăng ký
+      login_via_facebook: Đăng nhập bằng facebook
+      login_via_gmail: Đăng nhập bằng Gmail
+    create:
+      invalid_message: Sai tên đăng nhập hoặc mật khẩu

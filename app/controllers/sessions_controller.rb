@@ -4,9 +4,15 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by email: params[:session][:email]
+    email_username = params[:session][:email_username]
+    user = if email? email_username
+             User.find_by email: email_username
+           else
+             User.find_by username: email_username
+           end
     if user&.authenticate(params[:session][:password])
-      log_in_if_activated user
+      log_in user
+      redirect_to user
     else
       flash.now[:danger] = t ".invalid_message"
       render :new
