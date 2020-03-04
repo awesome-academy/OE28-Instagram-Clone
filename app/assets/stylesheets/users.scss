@@ -1,3 +1,86 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+/*Profile*/
+.profile .avatar {
+  .wrapper {
+    width: 140px;
+    height: 140px;
+    margin: 40px auto;
+  }
+  .wrapper img {
+    width: 100%;
+    border-radius: 50%;
+  }
+}
+
+.profile .basic-info {
+  padding: 40px 0;
+  .user-wrapper {
+    display: flex;
+  }
+  .username {
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 200;
+  }
+  .edit-profile {
+    margin-left: 20px;
+    margin-top: 5px;
+  }
+  .edit-profile button {
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid $lighter-gray;
+    color: $black-bold;
+    font-size: 14px;
+    padding: 4px 10px;
+    font-weight: 500;
+  }
+  ul.profile-stat {
+    padding-left: 0;
+    > li {
+      display: inline;
+      padding-right: 40px;
+      font-size: 15px;
+      span {
+        color: $black-bold;
+        font-weight: 600;
+      }
+      a {
+        color: $black-bold;
+      }
+    }
+  }
+  .name {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .website {
+    color: $blue-bold;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+.user-tabs {
+  border-top: 1px solid $white-gray;
+  display: flex;
+  justify-content: center;
+  a.tab {
+    height: 35px;
+    margin-right: 50px;
+    line-height: 45px;
+    color: $black-gray;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+    i {
+      padding-right: 1px;
+    }
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  a.active {
+    border-top: 1px solid $black-bold;
+    color: $black-bold;
+  }
+}

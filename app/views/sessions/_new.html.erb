@@ -1,0 +1,42 @@
+<% provide :title, t(".log_in") %>
+<div class="card login-form">
+  <article class="card-body">
+    <%= link_to  t(".sign_up"), signup_path, class: "float-right btn btn-outline-primary" %>
+    <h4 class="card-title mb-4 mt-1"><%= t "sign_in" %></h4>
+    <hr>
+    <%= render  "shared/error_messages" %>
+    <%= form_for :session, url: login_path do |f| %>
+      <div class="form-group">
+        <%= f.text_field :email, class: "form-control",
+          placeholder: t(".username_or_email") %>
+      </div>
+      <div class="form-group">
+        <%= f.password_field :password, class: "form-control",
+          placeholder: t(".password") %>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <%= f.submit t(".log_in"), class: "btn btn-primary btn-block"%>
+          </div>
+        </div>
+        <%= f.label :remember_me, class: "checkbox inline" do %>
+          <%= f.check_box :remember_me %>
+          <span><%= t ".remember_me" %></span>
+        <% end %>
+        <div class="col-md-6 text-right">
+        </div>
+      </div>
+    <% end %>
+    <p>
+      <%= link_to "#", class: "btn btn-block btn-outline-info" do %>
+        <i class="fa fa-facebook-f"></i>
+        <%= t ".login_via_gmail" %>
+      <% end %>
+      <%= link_to "#", class: "btn btn-block btn-outline-primary" do %>
+        <i class="fa fa-facebook-f"></i>
+        <%= t ".login_via_facebook" %>
+      <% end %>
+    </p>
+  </article>
+</div>

@@ -2,12 +2,22 @@
 <html>
   <head>
     <title><%= t "instagram" %></title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
-    <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
+    <%= render  "layouts/rails_link" %>
   </head>
   <body>
-    <%= yield %>
+     <%= render  "layouts/header" %>
+    <% if user_signed_in? %>
+      <main class="container" >
+        <% flash.each do |message_type, message| %>
+          <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
+        <% end %>
+        <%= yield %>
+      </main>
+      <%= render  "layouts/footer" %>
+    <% else %>
+      <main class="bg-container" >
+        <%= yield %>
+      </main>
+    <% end %>
   </body>
 </html>
