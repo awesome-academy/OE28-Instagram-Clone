@@ -45,9 +45,31 @@ en:
       password_confirmation: "Password Confirmation"
       or: "OR"
       login_via_facebook: "Login via Facebook"
+    tab:
+      saved: SAVED
+      tagged: TAGGED
+      posts: POSTS
+      igtv: IGTV
     show:
       title: "User"
       edit_profile: "Edit Profile"
-      posts: "posts"
-      followers: "followers"
-      following: "following"
+      count_posts:
+        one: "%{count} post"
+        other: "%{count} posts"
+      count_followers:
+        one: "%{count} follower"
+        other: "%{count} followers"
+      count_following:
+        one: "%{count} following"
+        other: "%{count} following"
+  sessions:
+    new:
+      username_or_email: Username or email
+      password: Password
+      log_in: Summit
+      sign_in: Sign in
+      sign_up: Sign up
+      login_via_facebook: Login via facebook
+      login_via_gmail: Login via Gmail
+    create:
+      invalid_message: Invalid username or password

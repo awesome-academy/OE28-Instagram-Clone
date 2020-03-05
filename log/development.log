@@ -1,2 +1,991 @@
 DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
  (called from load at /usr/local/bin/rake:23)
+Started GET "/en/login" for ::1 at 2020-03-05 09:37:27 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (6.0.2.1) lib/active_record/migration.rb:587:in `check_pending!'
+activerecord (6.0.2.1) lib/active_record/migration.rb:564:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (76.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (88.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20200304132526)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar, "password_digest" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200304132526"]]
+  [1m[35m (99.0ms)[0m  [1m[36mcommit transaction[0m
+Migrating to AddUsernameToUsers (20200304132738)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "users" ADD "username" varchar[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "name" varchar[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "users" ADD "website" varchar[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "bio" text[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "phone" varchar[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "users" ADD "gender" integer[0m
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "users" ADD "role" integer DEFAULT 0[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_username" ON "users" ("username")[0m
+  [1m[36mprimary::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200304132738"]]
+  [1m[35m (105.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-05 02:37:44.989076"], ["updated_at", "2020-03-05 02:37:44.989076"]]
+  [1m[35m (79.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/en/login" for ::1 at 2020-03-05 09:37:52 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+Completed 406 Not Acceptable in 18ms (ActiveRecord: 0.5ms | Allocations: 6127)
+
+
+  
+ActionController::MissingExactTemplate (SessionsController#new is missing a template for request formats: text/html):
+  
+actionpack (6.0.2.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.2.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:196:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.2.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.2.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.2.1) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.2.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.2.1) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.2.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.2.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.2.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.2.1) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.2.1) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (6.0.2.1) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.2.1) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.2.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
+rack (2.2.2) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.2) lib/rack/etag.rb:27:in `call'
+rack (2.2.2) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.2) lib/rack/head.rb:12:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.2) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.2) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.2.1) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.2.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.2.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.2.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.2.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.2.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.2.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.2.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.3) lib/puma/configuration.rb:228:in `call'
+puma (4.3.3) lib/puma/server.rb:682:in `handle_request'
+puma (4.3.3) lib/puma/server.rb:472:in `process_client'
+puma (4.3.3) lib/puma/server.rb:328:in `block in run'
+puma (4.3.3) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/en/login" for ::1 at 2020-03-05 09:38:40 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 27.3ms | Allocations: 13474)
+  Rendered layouts/_rails_link.html.erb (Duration: 1751.3ms | Allocations: 166457)
+Completed 500 Internal Server Error in 1783ms (ActiveRecord: 0.1ms | Allocations: 182811)
+
+
+Started GET "/en/login" for ::1 at 2020-03-05 09:40:06 +0700
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 9982)
+  Rendered layouts/_rails_link.html.erb (Duration: 29.7ms | Allocations: 18511)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 1.4ms | Allocations: 35700)
+
+
+Started GET "/" for ::1 at 2020-03-05 09:40:11 +0700
+Processing by StaticPagesController#new as HTML
+  Rendering static_pages/new.html.erb within layouts/application
+  Rendered static_pages/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 578)
+[Webpacker] Compiling...
+Started GET "/" for ::1 at 2020-03-05 09:40:15 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by StaticPagesController#new as HTML
+  Rendering static_pages/new.html.erb within layouts/application
+  Rendered static_pages/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 528)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 7903f94a7073bab7e401
+Version: webpack 4.42.0
+Time: 10094ms
+Built at: 03/05/2020 9:40:22 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-eb9352a0592d9fb5410f.js    7.9 MiB  application  [emitted] [immutable]  application
+js/application-eb9352a0592d9fb5410f.js.map   8.08 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-eb9352a0592d9fb5410f.js js/application-eb9352a0592d9fb5410f.js.map
+[5] colors (ignored) 15 bytes {application} [built]
+[6] ./file (ignored) 15 bytes {application} [built]
+[7] ./pause (ignored) 15 bytes {application} [built]
+[8] ./send (ignored) 15 bytes {application} [built]
+[9] ./via (ignored) 15 bytes {application} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 812 bytes {application} [built]
+[./node_modules/browserify sync recursive] ./node_modules/browserify sync 160 bytes {application} [built]
+[./node_modules/module-deps sync recursive] ./node_modules/module-deps sync 160 bytes {application} [built]
+[./node_modules/popper sync recursive] ./node_modules/popper sync 160 bytes {application} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 1110 hidden modules
+
+WARNING in ./node_modules/popper/index.js 228:33-56
+Critical dependency: the request of a dependency is an expression
+ @ ./app/javascript/packs/application.js
+
+WARNING in ./node_modules/browserify/index.js 395:12-26
+Critical dependency: the request of a dependency is an expression
+ @ ./node_modules/popper/index.js
+ @ ./app/javascript/packs/application.js
+
+WARNING in ./node_modules/module-deps/index.js 310:14-26
+Critical dependency: the request of a dependency is an expression
+ @ ./node_modules/browserify/index.js
+ @ ./node_modules/popper/index.js
+ @ ./app/javascript/packs/application.js
+
+WARNING in ./node_modules/express/lib/view.js 74:13-25
+Critical dependency: the request of a dependency is an expression
+ @ ./node_modules/express/lib/application.js
+ @ ./node_modules/express/lib/express.js
+ @ ./node_modules/express/index.js
+ @ ./node_modules/popper/index.js
+ @ ./app/javascript/packs/application.js
+
+WARNING in ./node_modules/popper/node_modules/chokidar/lib/fsevents-handler.js
+Module not found: Error: Can't resolve 'fsevents' in '/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper/node_modules/chokidar/lib'
+ @ ./node_modules/popper/node_modules/chokidar/lib/fsevents-handler.js
+ @ ./node_modules/popper/node_modules/chokidar/index.js
+ @ ./node_modules/popper/index.js
+ @ ./app/javascript/packs/application.js
+
+WARNING in ./node_modules/rijs.resdir/node_modules/chokidar/lib/fsevents-handler.js
+Module not found: Error: Can't resolve 'fsevents' in '/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs.resdir/node_modules/chokidar/lib'
+ @ ./node_modules/rijs.resdir/node_modules/chokidar/lib/fsevents-handler.js
+ @ ./node_modules/rijs.resdir/node_modules/chokidar/index.js
+ @ ./node_modules/rijs.resdir/index.js
+ @ ./node_modules/popper/index.js
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/path-platform/path.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/path-platform/path.js: 'return' outside of function (32:2)
+
+  30 | if (_path.posix) {
+  31 |   module.exports = _path;
+> 32 |   return;
+     |   ^
+  33 | }
+  34 | 
+  35 | // resolves . and .. elements in a path array with directory names there
+    at Parser.raise (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:7044:17)
+    at Parser.parseReturnStatement (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11083:12)
+    at Parser.parseStatementContent (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10772:21)
+    at Parser.parseStatement (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10724:17)
+    at Parser.parseBlockOrModuleBlockBody (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11298:25)
+    at Parser.parseBlockBody (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11285:10)
+    at Parser.parseBlock (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11269:10)
+    at Parser.parseStatementContent (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10800:21)
+    at Parser.parseStatement (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10724:17)
+    at Parser.parseIfStatement (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11076:28)
+    at Parser.parseStatementContent (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10769:21)
+    at Parser.parseStatement (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10724:17)
+    at Parser.parseBlockOrModuleBlockBody (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11298:25)
+    at Parser.parseBlockBody (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11285:10)
+    at Parser.parseTopLevel (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10655:10)
+    at Parser.parse (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:12264:10)
+    at parse (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:12315:38)
+    at parser (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/core/lib/parser/index.js:54:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/core/lib/transformation/normalize-file.js:93:38)
+    at normalizeFile.next (<anonymous>)
+    at run (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/core/lib/transformation/index.js:31:50)
+    at run.next (<anonymous>)
+    at Function.transform (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/core/lib/transform.js:27:41)
+    at transform.next (<anonymous>)
+    at step (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/gensync/index.js:254:32)
+    at /home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/gensync/index.js:266:13
+    at async.call.result.err.err (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/gensync/index.js:216:11)
+ @ ./node_modules/parents/index.js 1:19-43
+ @ ./node_modules/module-deps/index.js
+ @ ./node_modules/browserify/index.js
+ @ ./node_modules/popper/index.js
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/vargs/lib/vargs.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/vargs/lib/vargs.js: Binding 'arguments' in strict mode (24:37)
+
+  22 | //   }
+  23 | //
+> 24 | exports.Constructor = function Vargs(arguments) {
+     |                                      ^
+  25 |     this.array = Array.prototype.slice.call(arguments);
+  26 |     this.__defineGetter__('length', function () {
+  27 |         if (this.callbackGiven()) {
+    at Parser.raise (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:7044:17)
+    at Parser.checkLVal (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:8873:16)
+    at Parser.checkParams (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10311:12)
+    at Parser.parseFunctionBody (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10283:12)
+    at Parser.parseFunctionBodyAndFinish (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10254:10)
+    at /home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11429:12
+    at Parser.withTopicForbiddingContext (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10599:14)
+    at Parser.parseFunction (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11428:10)
+    at Parser.parseFunctionExpression (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:9742:17)
+    at Parser.parseExprAtom (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:9650:21)
+    at Parser.parseExprSubscripts (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:9287:23)
+    at Parser.parseMaybeUnary (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:9267:21)
+    at Parser.parseExprOps (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:9137:23)
+    at Parser.parseMaybeConditional (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:9110:23)
+    at Parser.parseMaybeAssign (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:9065:21)
+    at Parser.parseMaybeAssign (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:9097:25)
+    at Parser.parseExpression (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:9017:23)
+    at Parser.parseStatementContent (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10853:23)
+    at Parser.parseStatement (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10724:17)
+    at Parser.parseBlockOrModuleBlockBody (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11298:25)
+    at Parser.parseBlockBody (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11285:10)
+    at Parser.parseTopLevel (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10655:10)
+    at Parser.parse (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:12264:10)
+    at parse (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:12315:38)
+    at parser (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/core/lib/parser/index.js:54:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/core/lib/transformation/normalize-file.js:93:38)
+    at normalizeFile.next (<anonymous>)
+    at run (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/core/lib/transformation/index.js:31:50)
+    at run.next (<anonymous>)
+ @ ./node_modules/wd/lib/utils.js 3:11-27
+ @ ./node_modules/wd/lib/main.js
+ @ ./node_modules/popper/index.js
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/wd/lib/commands.js
+Module not found: Error: Can't resolve '../build/safe-execute' in '/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/wd/lib'
+ @ ./node_modules/wd/lib/commands.js 23:26-58
+ @ ./node_modules/wd/lib/element-commands.js
+ @ ./node_modules/wd/lib/element.js
+ @ ./node_modules/wd/lib/main.js
+ @ ./node_modules/popper/index.js
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/wd/lib/commands.js
+Module not found: Error: Can't resolve '../build/safe-execute-async' in '/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/wd/lib'
+ @ ./node_modules/wd/lib/commands.js 24:31-69
+ @ ./node_modules/wd/lib/element-commands.js
+ @ ./node_modules/wd/lib/element.js
+ @ ./node_modules/wd/lib/main.js
+ @ ./node_modules/popper/index.js
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/wd/lib/commands.js
+Module not found: Error: Can't resolve '../build/wait-for-cond-in-browser' in '/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/wd/lib'
+ @ ./node_modules/wd/lib/commands.js 25:41-85
+ @ ./node_modules/wd/lib/element-commands.js
+ @ ./node_modules/wd/lib/element.js
+ @ ./node_modules/wd/lib/main.js
+ @ ./node_modules/popper/index.js
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/bootstrap/dist/js/bootstrap.js
+Module not found: Error: Can't resolve 'popper.js' in '/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/bootstrap/dist/js'
+ @ ./node_modules/bootstrap/dist/js/bootstrap.js 9:152-172 9:221-272
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/popper/index.js
+Module not found: Error: Recursion in resolving
+Stack:
+  resolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs
+  newResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs
+  parsedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs module
+  describedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs module
+  rawModule: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs
+  module: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs
+  resolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules) ./rijs
+  newResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules) ./rijs
+  parsedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules) ./rijs
+  describedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules) ./rijs
+  relative: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs) 
+  describedRelative: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs) 
+  directory: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs) 
+  existingDirectory: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs) 
+  resolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs) ./.
+  newResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs) ./.
+  parsedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs) ./.
+  describedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs) ./.
+ @ ./node_modules/popper/index.js 202:29-44
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/popper/index.js
+Module not found: Error: Recursion in resolving
+Stack:
+  resolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs.npm
+  newResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs.npm
+  parsedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs.npm module
+  describedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs.npm module
+  rawModule: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs.npm
+  module: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs.npm
+  resolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules) ./rijs.npm
+  newResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules) ./rijs.npm
+  parsedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules) ./rijs.npm
+  describedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules) ./rijs.npm
+  relative: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs.npm) 
+  describedRelative: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs.npm) 
+  directory: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs.npm) 
+  existingDirectory: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs.npm) 
+  resolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs.npm) ./.
+  newResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs.npm) ./.
+  parsedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs.npm) ./.
+  describedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs.npm) ./.
+ @ ./node_modules/popper/index.js 202:9-28
+ @ ./app/javascript/packs/application.js
+
+
+warning ../../../../package.json: No license field
+
+  Rendered layouts/_rails_link.html.erb (Duration: 11360.7ms | Allocations: 27525)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 4.6ms | Allocations: 1989)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+Completed 200 OK in 11372ms (Views: 11369.7ms | ActiveRecord: 0.2ms | Allocations: 32485)
+
+
+[Webpacker] Compilation failed:
+Hash: 7903f94a7073bab7e401
+Version: webpack 4.42.0
+Time: 9988ms
+Built at: 03/05/2020 9:40:26 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-eb9352a0592d9fb5410f.js    7.9 MiB  application  [emitted] [immutable]  application
+js/application-eb9352a0592d9fb5410f.js.map   8.08 MiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-eb9352a0592d9fb5410f.js js/application-eb9352a0592d9fb5410f.js.map
+[5] colors (ignored) 15 bytes {application} [built]
+[6] ./file (ignored) 15 bytes {application} [built]
+[7] ./pause (ignored) 15 bytes {application} [built]
+[8] ./send (ignored) 15 bytes {application} [built]
+[9] ./via (ignored) 15 bytes {application} [built]
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 812 bytes {application} [built]
+[./node_modules/browserify sync recursive] ./node_modules/browserify sync 160 bytes {application} [built]
+[./node_modules/module-deps sync recursive] ./node_modules/module-deps sync 160 bytes {application} [built]
+[./node_modules/popper sync recursive] ./node_modules/popper sync 160 bytes {application} [built]
+[./node_modules/webpack/buildin/amd-options.js] (webpack)/buildin/amd-options.js 80 bytes {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {application} [built]
+[./node_modules/webpack/buildin/harmony-module.js] (webpack)/buildin/harmony-module.js 631 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 1110 hidden modules
+
+WARNING in ./node_modules/popper/index.js 228:33-56
+Critical dependency: the request of a dependency is an expression
+ @ ./app/javascript/packs/application.js
+
+WARNING in ./node_modules/browserify/index.js 395:12-26
+Critical dependency: the request of a dependency is an expression
+ @ ./node_modules/popper/index.js
+ @ ./app/javascript/packs/application.js
+
+WARNING in ./node_modules/module-deps/index.js 310:14-26
+Critical dependency: the request of a dependency is an expression
+ @ ./node_modules/browserify/index.js
+ @ ./node_modules/popper/index.js
+ @ ./app/javascript/packs/application.js
+
+WARNING in ./node_modules/express/lib/view.js 74:13-25
+Critical dependency: the request of a dependency is an expression
+ @ ./node_modules/express/lib/application.js
+ @ ./node_modules/express/lib/express.js
+ @ ./node_modules/express/index.js
+ @ ./node_modules/popper/index.js
+ @ ./app/javascript/packs/application.js
+
+WARNING in ./node_modules/popper/node_modules/chokidar/lib/fsevents-handler.js
+Module not found: Error: Can't resolve 'fsevents' in '/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper/node_modules/chokidar/lib'
+ @ ./node_modules/popper/node_modules/chokidar/lib/fsevents-handler.js
+ @ ./node_modules/popper/node_modules/chokidar/index.js
+ @ ./node_modules/popper/index.js
+ @ ./app/javascript/packs/application.js
+
+WARNING in ./node_modules/rijs.resdir/node_modules/chokidar/lib/fsevents-handler.js
+Module not found: Error: Can't resolve 'fsevents' in '/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs.resdir/node_modules/chokidar/lib'
+ @ ./node_modules/rijs.resdir/node_modules/chokidar/lib/fsevents-handler.js
+ @ ./node_modules/rijs.resdir/node_modules/chokidar/index.js
+ @ ./node_modules/rijs.resdir/index.js
+ @ ./node_modules/popper/index.js
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/path-platform/path.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/path-platform/path.js: 'return' outside of function (32:2)
+
+  30 | if (_path.posix) {
+  31 |   module.exports = _path;
+> 32 |   return;
+     |   ^
+  33 | }
+  34 | 
+  35 | // resolves . and .. elements in a path array with directory names there
+    at Parser.raise (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:7044:17)
+    at Parser.parseReturnStatement (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11083:12)
+    at Parser.parseStatementContent (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10772:21)
+    at Parser.parseStatement (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10724:17)
+    at Parser.parseBlockOrModuleBlockBody (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11298:25)
+    at Parser.parseBlockBody (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11285:10)
+    at Parser.parseBlock (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11269:10)
+    at Parser.parseStatementContent (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10800:21)
+    at Parser.parseStatement (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10724:17)
+    at Parser.parseIfStatement (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11076:28)
+    at Parser.parseStatementContent (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10769:21)
+    at Parser.parseStatement (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10724:17)
+    at Parser.parseBlockOrModuleBlockBody (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11298:25)
+    at Parser.parseBlockBody (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11285:10)
+    at Parser.parseTopLevel (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10655:10)
+    at Parser.parse (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:12264:10)
+    at parse (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:12315:38)
+    at parser (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/core/lib/parser/index.js:54:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/core/lib/transformation/normalize-file.js:93:38)
+    at normalizeFile.next (<anonymous>)
+    at run (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/core/lib/transformation/index.js:31:50)
+    at run.next (<anonymous>)
+    at Function.transform (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/core/lib/transform.js:27:41)
+    at transform.next (<anonymous>)
+    at step (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/gensync/index.js:254:32)
+    at /home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/gensync/index.js:266:13
+    at async.call.result.err.err (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/gensync/index.js:216:11)
+ @ ./node_modules/parents/index.js 1:19-43
+ @ ./node_modules/module-deps/index.js
+ @ ./node_modules/browserify/index.js
+ @ ./node_modules/popper/index.js
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/vargs/lib/vargs.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/vargs/lib/vargs.js: Binding 'arguments' in strict mode (24:37)
+
+  22 | //   }
+  23 | //
+> 24 | exports.Constructor = function Vargs(arguments) {
+     |                                      ^
+  25 |     this.array = Array.prototype.slice.call(arguments);
+  26 |     this.__defineGetter__('length', function () {
+  27 |         if (this.callbackGiven()) {
+    at Parser.raise (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:7044:17)
+    at Parser.checkLVal (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:8873:16)
+    at Parser.checkParams (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10311:12)
+    at Parser.parseFunctionBody (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10283:12)
+    at Parser.parseFunctionBodyAndFinish (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10254:10)
+    at /home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11429:12
+    at Parser.withTopicForbiddingContext (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10599:14)
+    at Parser.parseFunction (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11428:10)
+    at Parser.parseFunctionExpression (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:9742:17)
+    at Parser.parseExprAtom (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:9650:21)
+    at Parser.parseExprSubscripts (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:9287:23)
+    at Parser.parseMaybeUnary (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:9267:21)
+    at Parser.parseExprOps (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:9137:23)
+    at Parser.parseMaybeConditional (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:9110:23)
+    at Parser.parseMaybeAssign (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:9065:21)
+    at Parser.parseMaybeAssign (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:9097:25)
+    at Parser.parseExpression (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:9017:23)
+    at Parser.parseStatementContent (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10853:23)
+    at Parser.parseStatement (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10724:17)
+    at Parser.parseBlockOrModuleBlockBody (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11298:25)
+    at Parser.parseBlockBody (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:11285:10)
+    at Parser.parseTopLevel (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:10655:10)
+    at Parser.parse (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:12264:10)
+    at parse (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/parser/lib/index.js:12315:38)
+    at parser (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/core/lib/parser/index.js:54:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/core/lib/transformation/normalize-file.js:93:38)
+    at normalizeFile.next (<anonymous>)
+    at run (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/@babel/core/lib/transformation/index.js:31:50)
+    at run.next (<anonymous>)
+ @ ./node_modules/wd/lib/utils.js 3:11-27
+ @ ./node_modules/wd/lib/main.js
+ @ ./node_modules/popper/index.js
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/wd/lib/commands.js
+Module not found: Error: Can't resolve '../build/safe-execute' in '/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/wd/lib'
+ @ ./node_modules/wd/lib/commands.js 23:26-58
+ @ ./node_modules/wd/lib/webdriver.js
+ @ ./node_modules/wd/lib/main.js
+ @ ./node_modules/popper/index.js
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/wd/lib/commands.js
+Module not found: Error: Can't resolve '../build/safe-execute-async' in '/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/wd/lib'
+ @ ./node_modules/wd/lib/commands.js 24:31-69
+ @ ./node_modules/wd/lib/webdriver.js
+ @ ./node_modules/wd/lib/main.js
+ @ ./node_modules/popper/index.js
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/wd/lib/commands.js
+Module not found: Error: Can't resolve '../build/wait-for-cond-in-browser' in '/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/wd/lib'
+ @ ./node_modules/wd/lib/commands.js 25:41-85
+ @ ./node_modules/wd/lib/webdriver.js
+ @ ./node_modules/wd/lib/main.js
+ @ ./node_modules/popper/index.js
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/bootstrap/dist/js/bootstrap.js
+Module not found: Error: Can't resolve 'popper.js' in '/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/bootstrap/dist/js'
+ @ ./node_modules/bootstrap/dist/js/bootstrap.js 9:152-172 9:221-272
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/popper/index.js
+Module not found: Error: Recursion in resolving
+Stack:
+  resolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs
+  newResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs
+  parsedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs module
+  describedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs module
+  rawModule: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs
+  module: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs
+  resolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules) ./rijs
+  newResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules) ./rijs
+  parsedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules) ./rijs
+  describedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules) ./rijs
+  relative: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs) 
+  describedRelative: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs) 
+  directory: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs) 
+  existingDirectory: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs) 
+  resolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs) ./.
+  newResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs) ./.
+  parsedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs) ./.
+  describedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs) ./.
+ @ ./node_modules/popper/index.js 202:29-44
+ @ ./app/javascript/packs/application.js
+
+ERROR in ./node_modules/popper/index.js
+Module not found: Error: Recursion in resolving
+Stack:
+  resolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs.npm
+  newResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs.npm
+  parsedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs.npm module
+  describedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs.npm module
+  rawModule: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs.npm
+  module: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/popper) rijs.npm
+  resolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules) ./rijs.npm
+  newResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules) ./rijs.npm
+  parsedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules) ./rijs.npm
+  describedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules) ./rijs.npm
+  relative: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs.npm) 
+  describedRelative: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs.npm) 
+  directory: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs.npm) 
+  existingDirectory: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs.npm) 
+  resolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs.npm) ./.
+  newResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs.npm) ./.
+  parsedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs.npm) ./.
+  describedResolve: (/home/lvhoang/Dev/Ruby/rails/OE28-Instagram/node_modules/rijs.npm) ./.
+ @ ./node_modules/popper/index.js 202:9-28
+ @ ./app/javascript/packs/application.js
+
+
+warning ../../../../package.json: No license field
+
+  Rendered layouts/_rails_link.html.erb (Duration: 11320.9ms | Allocations: 14773)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.5ms | Allocations: 1087)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+Completed 200 OK in 11329ms (Views: 11325.5ms | ActiveRecord: 0.3ms | Allocations: 18073)
+
+
+Started GET "/en" for ::1 at 2020-03-05 09:42:48 +0700
+Processing by StaticPagesController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering static_pages/new.html.erb within layouts/application
+  Rendered static_pages/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 527)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_rails_link.html.erb (Duration: 11.5ms | Allocations: 8343)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.8ms | Allocations: 1048)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+Completed 200 OK in 20ms (Views: 16.4ms | ActiveRecord: 0.3ms | Allocations: 11590)
+
+
+Started GET "/en/login" for ::1 at 2020-03-05 09:42:51 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 4652)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_rails_link.html.erb (Duration: 13.0ms | Allocations: 8341)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 990)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+Completed 200 OK in 27ms (Views: 23.4ms | ActiveRecord: 0.2ms | Allocations: 16164)
+
+
+Started GET "/en/signup" for ::1 at 2020-03-05 09:43:00 +0700
+Processing by UsersController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 221)
+  Rendered users/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1882)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_rails_link.html.erb (Duration: 9.6ms | Allocations: 8389)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 1066)
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+Completed 200 OK in 33ms (Views: 18.1ms | ActiveRecord: 1.1ms | Allocations: 20901)
+
+
+Started POST "/en/signup" for ::1 at 2020-03-05 09:43:08 +0700
+Processing by UsersController#create as HTML
+  Parameters: {"authenticity_token"=>"XWFaY7px9zTgY+N5aAqKoeTDyI+PgW95OayfcBHuTHAvLqIcbpigJYRQNBgq+vJ/yI1jnc5VGepbfYeFBnWWKA==", "user"=>{"email"=>"viethoang2901hust@gmail.com", "name"=>"Việt Hoàng", "username"=>"viethoang", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "locale"=>"en"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "viethoang2901hust@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "viethoang"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "created_at", "updated_at", "username", "name") VALUES (?, ?, ?, ?, ?, ?)[0m  [["email", "viethoang2901hust@gmail.com"], ["password_digest", "$2a$12$s3TmHiT5xg2PDfsNbdrB/.v0PGe6tUtJwPoYIT89XaX9z8lMLgNY."], ["created_at", "2020-03-05 02:43:08.547856"], ["updated_at", "2020-03-05 02:43:08.547856"], ["username", "viethoang"], ["name", "Việt Hoàng"]]
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[35m (94.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+Redirected to http://localhost:3000/en/users/1
+Completed 302 Found in 431ms (ActiveRecord: 95.6ms | Allocations: 6942)
+
+
+Started GET "/en/users/1" for ::1 at 2020-03-05 09:43:08 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"en", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `get_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_stat.html.erb (Duration: 2.6ms | Allocations: 1917)
+  Rendered users/show.html.erb within layouts/application (Duration: 9.5ms | Allocations: 3264)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_rails_link.html.erb (Duration: 15.6ms | Allocations: 8215)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.9ms | Allocations: 1230)
+  Rendered layouts/_footer.html.erb (Duration: 1.2ms | Allocations: 582)
+Completed 200 OK in 35ms (Views: 31.4ms | ActiveRecord: 0.3ms | Allocations: 15425)
+
+
+Started DELETE "/en/logout" for ::1 at 2020-03-05 09:44:12 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"TNqhzpwZOZNhPY5N3OzoApCD7tWEoNnpVEhkisNNhjZZJUAvJmscEv2qYW7HQlal8zDZf/IqnbE9JGisOmwtaw==", "locale"=>"en"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+Redirected to http://localhost:3000/en/login
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1441)
+
+
+Started GET "/en/login" for ::1 at 2020-03-05 09:44:12 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 4652)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_rails_link.html.erb (Duration: 10.3ms | Allocations: 8341)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 494)
+Completed 200 OK in 18ms (Views: 15.1ms | ActiveRecord: 0.0ms | Allocations: 14687)
+
+
+Started GET "/en/login" for ::1 at 2020-03-05 09:47:22 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"en"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 9.2ms | Allocations: 5961)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_rails_link.html.erb (Duration: 11.7ms | Allocations: 8341)
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 903)
+Completed 200 OK in 26ms (Views: 23.6ms | ActiveRecord: 0.0ms | Allocations: 16622)
+
+
+Started GET "/vi/login" for ::1 at 2020-03-05 09:47:25 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 1287)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_rails_link.html.erb (Duration: 20.1ms | Allocations: 8340)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 486)
+Completed 200 OK in 35ms (Views: 29.9ms | ActiveRecord: 0.0ms | Allocations: 12081)
+
+
+Started POST "/vi/login" for ::1 at 2020-03-05 09:47:30 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"4/VRVf1ibO+K4DlMWv1tOunCPkphd/zu+3OUEJVHj9aGC4eblzrjsBMCLKgz9eP0cQGwANgJ/VzUyjedLm459g==", "session"=>{"email_username"=>"viethoang", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Đăng nhập", "locale"=>"vi"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "viethoang"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1276)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_rails_link.html.erb (Duration: 14.7ms | Allocations: 8333)
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 506)
+Completed 200 OK in 32ms (Views: 18.6ms | ActiveRecord: 0.7ms | Allocations: 14407)
+
+
+Started POST "/vi/login" for ::1 at 2020-03-05 09:47:35 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"KL/XSqWibjZMgUliLs8D/wROpvoaKyB8Wd10LPIWHes9QDarH9BLt9AWpkE1Yb1YZ/2RUGyhZCQwsXgKCze2tg==", "session"=>{"email_username"=>"viethoang2901hust@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Đăng nhập", "locale"=>"vi"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "viethoang2901hust@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Redirected to http://localhost:3000/vi/users/1
+Completed 302 Found in 341ms (ActiveRecord: 1.8ms | Allocations: 8408)
+
+
+Started GET "/vi/users/1" for ::1 at 2020-03-05 09:47:35 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"vi", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `get_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_stat.html.erb (Duration: 0.6ms | Allocations: 1594)
+  Rendered users/show.html.erb within layouts/application (Duration: 2.9ms | Allocations: 2607)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_rails_link.html.erb (Duration: 10.9ms | Allocations: 8214)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.7ms | Allocations: 1228)
+  Rendered layouts/_footer.html.erb (Duration: 0.3ms | Allocations: 239)
+Completed 200 OK in 24ms (Views: 19.0ms | ActiveRecord: 0.7ms | Allocations: 14962)
+
+
+Started DELETE "/vi/logout" for ::1 at 2020-03-05 09:47:38 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fMd6ri9l5l2vo/URC9NbD44QqXeOp/KV64XqpkwZBW9pOJtPlRfD3DM0GjIQfeWo7aOe3fgtts2C6eaAtTiuMg==", "locale"=>"vi"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+Redirected to http://localhost:3000/vi/login
+Completed 302 Found in 9ms (ActiveRecord: 0.4ms | Allocations: 1447)
+
+
+Started GET "/vi/login" for ::1 at 2020-03-05 09:47:38 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1281)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_rails_link.html.erb (Duration: 11.6ms | Allocations: 8340)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 486)
+Completed 200 OK in 21ms (Views: 18.1ms | ActiveRecord: 0.0ms | Allocations: 11299)
+
+
+Started POST "/vi/login" for ::1 at 2020-03-05 09:47:42 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"c4lT04FwLDAcuGJ4ECfhUuaCPJEqP/M8cYmY8pa/a6lmdrIyOwIJsYAvjVsLiV/1hTELO1y1t2QY5ZTUb57A9A==", "session"=>{"email_username"=>"viethoang", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Đăng nhập", "locale"=>"vi"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "viethoang"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1277)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_rails_link.html.erb (Duration: 16.7ms | Allocations: 8335)
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 487)
+Completed 200 OK in 28ms (Views: 20.4ms | ActiveRecord: 0.3ms | Allocations: 11878)
+
+
+Started POST "/vi/login" for ::1 at 2020-03-05 09:48:07 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"7U1Gmts7A/b1qwBx1uSR4KHJmjlve7oqgzsUnpn99NL4sqd7YUkmd2k871LNSi9Hwnqtkxnx/nLqVxi4YNxfjw==", "session"=>{"email_username"=>"viethoang2901hust@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Đăng nhập", "locale"=>"vi"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "viethoang2901hust@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:9:in `create'
+Redirected to http://localhost:3000/vi/users/1
+Completed 302 Found in 281ms (ActiveRecord: 0.1ms | Allocations: 1503)
+
+
+Started GET "/vi/users/1" for ::1 at 2020-03-05 09:48:07 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"vi", "id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `get_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_stat.html.erb (Duration: 0.7ms | Allocations: 1633)
+  Rendered users/show.html.erb within layouts/application (Duration: 2.3ms | Allocations: 2500)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_rails_link.html.erb (Duration: 11.0ms | Allocations: 8211)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 1201)
+  Rendered layouts/_footer.html.erb (Duration: 0.5ms | Allocations: 239)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.2ms | Allocations: 13953)
+
+
+Started DELETE "/vi/logout" for ::1 at 2020-03-05 09:48:10 +0700
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"7uaNRfD88rURP64siygQmxdp6+fJtvSMY4Oc1qW1B0H7GWykSo7XNI2oQQ+Qhq48dNrcTb88sNQK75DwXJSsHA==", "locale"=>"vi"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+Redirected to http://localhost:3000/vi/login
+Completed 302 Found in 9ms (ActiveRecord: 0.3ms | Allocations: 1441)
+
+
+Started GET "/vi/login" for ::1 at 2020-03-05 09:48:10 +0700
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.9ms | Allocations: 1281)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_rails_link.html.erb (Duration: 11.8ms | Allocations: 8340)
+  Rendered layouts/_header.html.erb (Duration: 1.1ms | Allocations: 486)
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 0.0ms | Allocations: 11299)
+
+
+Started POST "/vi/login" for ::1 at 2020-03-05 09:48:33 +0700
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"wMQ6/dlAVnxquRp4WSBZa8zWmuAa7Pydj9ED+Zjes1nVO9scYzJz/fYu9VtCjufMr2WtSmxmuMXmvQ/fYf8YBA==", "session"=>{"email_username"=>"viethoang", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Đăng nhập", "locale"=>"vi"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "viethoang"], ["LIMIT", 1]]
+  ↳ (byebug):1:in `create'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "viethoang"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:10:in `create'
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1273)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_rails_link.html.erb (Duration: 21.6ms | Allocations: 8339)
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 924)
+Completed 200 OK in 105324ms (Views: 31.9ms | ActiveRecord: 3.5ms | Allocations: 61784)
+
+
+Started GET "/vi/login" for ::1 at 2020-03-05 09:50:31 +0700
+  [1m[35m (6.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by SessionsController#new as HTML
+  Parameters: {"locale"=>"vi"}
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (Duration: 10.6ms | Allocations: 6965)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_rails_link.html.erb (Duration: 29.0ms | Allocations: 14526)
+  Rendered layouts/_header.html.erb (Duration: 1.8ms | Allocations: 1400)
+Completed 200 OK in 54ms (Views: 45.9ms | ActiveRecord: 0.0ms | Allocations: 26779)
+
+
+Started POST "/vi/login" for ::1 at 2020-03-05 09:50:37 +0700
+Processing by SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"3DQ3sKLgioc5c9QzrNpY5AkiruI6pZaOSD+gTUoN/1HJy9ZRGJKvBqXkOxC3dOZDapGZSEwv0tYhU6xrsyxUDA==", "session"=>{"email_username"=>"viethoang", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Đăng nhập", "locale"=>"vi"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = ? LIMIT ?[0m  [["username", "viethoang"], ["LIMIT", 1]]
+  ↳ app/controllers/sessions_controller.rb:11:in `create'
+Redirected to http://localhost:3000/vi/users/1
+Completed 302 Found in 306ms (ActiveRecord: 1.7ms | Allocations: 11803)
+
+
+Started GET "/vi/users/1" for ::1 at 2020-03-05 09:50:37 +0700
+Processing by UsersController#show as HTML
+  Parameters: {"locale"=>"vi", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:29:in `get_user'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/_stat.html.erb (Duration: 2.0ms | Allocations: 1884)
+  Rendered users/show.html.erb within layouts/application (Duration: 5.3ms | Allocations: 3247)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_rails_link.html.erb (Duration: 9.4ms | Allocations: 8215)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/sessions_helper.rb:7:in `current_user'
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 1231)
+  Rendered layouts/_footer.html.erb (Duration: 2.9ms | Allocations: 582)
+Completed 200 OK in 27ms (Views: 22.1ms | ActiveRecord: 0.3ms | Allocations: 16022)
+
+

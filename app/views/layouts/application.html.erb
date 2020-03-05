@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= t "instagram" %></title>
+    <title><%= yield :title %></title>
     <%= render  "layouts/rails_link" %>
   </head>
   <body>
     <%= render  "layouts/header" %>
-    <main class="body" >
-      <%= yield %>
-    </main>
-    <%= render  "layouts/footer" %>
+     <% if user_signed_in? %>
+      <main class="container" >
+        <% flash.each do |message_type, message| %>
+          <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
+        <% end %>
+        <%= yield %>
+      </main>
+      <%= render  "layouts/footer" %>
+    <% else %>
+      <main class="bg-container" >
+        <%= yield %>
+      </main>
+    <% end %>
   </body>
 </html>
