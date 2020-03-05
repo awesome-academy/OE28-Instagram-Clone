@@ -3,43 +3,43 @@ html {
   height: 100%;
 }
 
-.container{
+.container {
   max-width: 1000px;
 }
 
-.navbar{
+.navbar {
   border-bottom: 1px solid $rgba000;
 }
 
-.user-section{
-  a{
+.user-section {
+  a {
     padding-left: 15px;
   }
-  i.fa{
+  i.fa {
     font-size: 22px;
     color: $d0004;
   }
 }
 
-.search-form{
-  input{
+.search-form {
+  input {
     font-size: 13px;
     text-align: center;
   }
 }
 
-.footer{
+.footer {
   font-size: 12px;
   padding-top: 30px;
-  ul{
+  ul {
     padding-left: 0;
-    > li{
+    > li {
       display: inline;
       padding-right: 15px;
       color: $d0035;
     }
   }
-  p{
+  p {
     color: $d999;
   }
 }
@@ -76,7 +76,9 @@ html {
   display: block;
 }
 
-.dropdown-content a:hover {background-color: $ecd9d9}
+.dropdown-content a:hover {
+  background-color: $ecd9d9;
+}
 
 .dropdown:hover .dropdown-content {
   display: block;
@@ -87,7 +89,7 @@ html {
 }
 
 /*Login and signup*/
-.body {
+.bg-container {
   max-width: 2000px;
   display: flex;
   justify-content: center;
@@ -96,7 +98,6 @@ html {
   background: image-url("Bg4.jpg") no-repeat center;
   background-size: cover;
 }
-
 
 .login-form {
   width: 400px;

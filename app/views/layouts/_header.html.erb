@@ -21,8 +21,13 @@
       <%= link_to "#" do %>
         <i class="fa fa-heart"></i>
       <% end %>
-      <%= link_to "#" do %>
-        <i class="fa fa-user"></i>
+      <% if user_signed_in? %>
+        <%= link_to current_user  do %>
+          <i class="fa fa-user"></i>
+        <% end %>
+        <%= link_to logout_path, method: :delete do %>
+          <i class="fa fa-sign-in"></i>
+        <% end %>
       <% end %>
     </div>
     <div class="dropdown ml-5">

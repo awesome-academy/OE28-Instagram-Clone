@@ -45,9 +45,31 @@ vi:
       password_confirmation: "Xác nhận mật khẩu"
       or: "HOẶC"
       login_via_facebook: "Đăng nhập qua Facebook"
+    tab:
+      saved: ĐÃ LƯU
+      tagged: TAGGED
+      posts: ẢNH
+      igtv: IGTV
     show:
       title: "Người dùng"
       edit_profile: "Chỉnh sửa hồ sơ"
-      posts: "bài đăng"
-      followers: "người theo dõi bạn"
-      following: "người được bạn theo dõi"
+      count_posts:
+        one: "%{count} bài đăng"
+        other: "%{count} bài đăng"
+      count_followers:
+        one: "%{count} người theo dõi bạn"
+        other: "%{count} người theo dõi bạn"
+      count_following:
+        one: "%{count} người mà bạn theo dõi"
+        other: "%{count} người mà bạn theo dõi"
+  sessions:
+    new:
+      username_or_email: Username hoặc email
+      password: Mật khẩu
+      log_in: Đăng nhập 
+      sign_in: Đăng nhập
+      sign_up: Đăng ký
+      login_via_facebook: Đăng nhập bằng facebook
+      login_via_gmail: Đăng nhập bằng Gmail
+    create:
+      invalid_message: Sai tên đăng nhập hoặc mật khẩu
