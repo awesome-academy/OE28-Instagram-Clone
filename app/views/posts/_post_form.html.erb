@@ -1,7 +1,7 @@
 <%= form_for @post do |f| %>
   <%= render "shared/error_messages", object: @post %>
   <div class="form-group">
-    <%= f.text_field :description, placeholder: t(".description") %>
+    <%= f.text_area :description, placeholder: t(".description") %>
   </div>
   <div class="form-group">
     <%= f.file_field :images, multiple: true, accept: Settings.image_format %>

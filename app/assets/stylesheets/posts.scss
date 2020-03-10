@@ -8,6 +8,9 @@
   input[type="text"] {
     width: 100%;
   }
+  textarea {
+    width: 100%;
+  }
 }
 ul#preview {
   list-style: none;
@@ -91,6 +94,7 @@ ul#preview li img {
   height: 300px;
   object-fit: cover;
 }
+
 /*Post show*/
 .instagram-card {
   width: fit-content;
@@ -155,6 +159,11 @@ ul#preview li img {
 .instagram-bookmark {
   float: right;
   margin-right: 0;
+}
+
+.hashtag {
+    color: #007bff !important;
+    font-weight: 200 !important
 }
 
 .date {

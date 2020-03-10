@@ -17,6 +17,8 @@ class Post < ApplicationRecord
 
   scope :order_by_created_at, ->{order created_at: :desc}
 
+  after_commit :add_hashtags, on: %i(create update)
+  
   private
   def image_presence
     errors.add :images, I18n.t("image_cant_be_blank") unless images.attached?

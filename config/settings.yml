@@ -19,7 +19,7 @@ user:
 favicon_image: "favicon.png"
 disable_link: "javascript:void(0)"
 post:
-  max_picture_size: 2
+  max_picture_size: 5
   content_type: ["image/jpeg", "image/gif", "image/png"]
 favicon_image: "favicon.png"
 hashtag:

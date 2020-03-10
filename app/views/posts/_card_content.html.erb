@@ -17,7 +17,16 @@
       <%= link_to @post.user, class: "instagram-card-content-username" do %>
         <%= @post.user_username %>
       <% end %>
-      <%= @post.description %>
+      <% separate_lines(@post.description).each do |line| %>
+        <% separate_words(line).each do |word| %>
+          <% if word.start_with? '#' %>
+            <%= link_to word, "#", class: "hashtag" %>
+          <% else %>
+            <%= word %>
+          <% end %>
+        <% end %>
+        <br>
+      <% end %>
     <% end %>
   </p>
   <p class="date">
