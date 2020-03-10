@@ -16,6 +16,11 @@ class Post < ApplicationRecord
   validate :image_presence
 
   scope :order_by_created_at, ->{order created_at: :desc}
+  scope :feed, (lambda do |user_id|
+                  where(user_id: Relationship.following_ids(user_id))
+                  .or(where(user_id: user_id))
+                end)
+  after_commit :add_hashtags, on: %i(create update)
 
   private
   def image_presence

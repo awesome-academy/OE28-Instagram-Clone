@@ -1,9 +1,10 @@
 <% provide :title, @title %>
 <div class="instagram-card flex-card">
-  <%= render "card_images" %>
+  <%= render "shared/card_images", post: @post, type: "detail" %>
   <div class="content-wrapper" >
-    <%= render "card_header" %>
-    <%= render "card_content" %>
+    <%= render "shared/card_header", post: @post %>
+    <%= render "shared/card_content", post: @post %>
+    <%= render "shared/card_stat", post: @post %>
     <div class="instagram-card-footer">
     </div>
   </div>

@@ -12,15 +12,7 @@
   <p>
     <%= link_to t(".count_like", count: 70), "#" %>
   </p>
-  <p>
-    <% if @post.description %>
-      <%= link_to @post.user, class: "instagram-card-content-username" do %>
-        <%= @post.user_username %>
-      <% end %>
-      <%= @post.description %>
-    <% end %>
-  </p>
   <p class="date">
-    <%= time_ago_in_words @post.created_at %>
+    <%= time_ago_in_words post.created_at %>
   </p>
 </div>

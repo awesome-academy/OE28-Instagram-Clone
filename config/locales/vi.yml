@@ -30,12 +30,16 @@ vi:
       count:
         one: "%{count} lỗi"
         other: "%{count} lỗi"
+    card_stat:
+      count_like:
+        other: "%{count} lượt thích"
   static_pages:
     new:
       title: "Trang chủ"
     title: "Trang chủ"
     index:
       create_post: Đăng bài
+      new_post: Bài viết mới
   users:
     create:
       signup_success: "Đăng ký thành công!"
@@ -56,7 +60,7 @@ vi:
       login_via_facebook: "Đăng nhập qua Facebook"
     tab:
       saved: ĐÃ LƯU
-      tagged: TAGGED
+      tagged: GẮN THẺ
       posts: ẢNH
       igtv: IGTV
     show:
@@ -147,7 +151,7 @@ vi:
     destroy:
       destroy_success: Post has been deleted successfully
       destroy_failed: Fail to delete post
-    card_content:
+    card_stat:
       count_like:
         other: "%{count} lượt thích"
   

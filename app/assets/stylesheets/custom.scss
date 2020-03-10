@@ -1,6 +1,7 @@
 body,
 html {
   height: 100%;
+  background-color: $light-grey;
 }
 
 main.container {
@@ -9,6 +10,10 @@ main.container {
 
 .container {
   max-width: 1000px;
+}
+
+.home {
+  margin-top: 75px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -22,8 +27,14 @@ h1 {
   text-align: center;
 }
 
-.navbar {
+.navbar.header {
   border-bottom: 1px solid $rgba000;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 100;
+  background-color: $fff !important;
 }
 
 .user-section {
@@ -41,6 +52,11 @@ h1 {
     font-size: 13px;
     text-align: center;
   }
+}
+
+.paging {
+  margin: 0 auto;
+  width: fit-content;
 }
 
 .footer {
@@ -128,4 +144,10 @@ h1 {
 
 .user-section a {
   text-decoration: none;
+}
+
+.new-btn {
+  margin: 0 auto;
+  display: block;
+  margin-top: 15px;
 }

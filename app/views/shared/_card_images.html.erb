@@ -1,0 +1,24 @@
+<div id="carouselExampleIndicators<%= post.id %>"
+  class="carousel slide instagram-card-image"
+  data-ride="carousel">
+  <div class="carousel-inner">
+    <% post.images.each do |image| %>
+      <div class="carousel-item 
+        <%= image==post.images.first ? "active" : "" %>">
+        <%= image_tag image, class: "d-block w-100 #{type}" %>
+      </div>
+    <% end %>
+  </div>
+  <% if post.images.size > 1 %>
+    <a class="carousel-control-prev" 
+      href="#carouselExampleIndicators<%= post.id %>" 
+      role="button" data-slide="prev" >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </a>
+    <a class="carousel-control-next" 
+      href="#carouselExampleIndicators<%= post.id %>"
+      role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </a>
+  <% end %>
+</div>

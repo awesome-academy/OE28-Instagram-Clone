@@ -7,11 +7,10 @@ class PostsController < ApplicationController
     @post = current_user.posts.build post_params
     if @post.save
       flash[:success] = t ".upload_successfully"
-      redirect_to current_user
     else
       flash[:danger] = t ".upload_fail"
-      redirect_to root_path
     end
+    redirect_to root_path
   end
 
   def edit; end

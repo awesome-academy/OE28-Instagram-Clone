@@ -2,10 +2,25 @@
 .new_post, .edit_post {
   border: 1px solid $dbdbdb;
   height: auto;
-  margin: auto 160px;
   padding: 30px;
   border-radius: 3px;
   input[type="text"] {
+    width: 100%;
+  }
+  textarea {
+    width: 100%;
+  }
+}
+.edit_post {
+  border: 1px solid $dbdbdb;
+  height: auto;
+  padding: 30px;
+  margin: 0 auto;
+  border-radius: 3px;
+  input[type="text"] {
+    width: 100%;
+  }
+  textarea {
     width: 100%;
   }
 }
@@ -91,11 +106,12 @@ ul#preview li img {
   height: 300px;
   object-fit: cover;
 }
+
 /*Post show*/
 .instagram-card {
   width: fit-content;
   margin: 0 auto;
-  border: 1px solid $d999;
+  border: 1px solid $dbdbdb;
   background: $white;
   margin-top: 25px;
   border-radius: 4px;
@@ -128,12 +144,17 @@ ul#preview li img {
   margin-right: 15px;
 }
 
-.instagram-card-image img {
-  max-width: 600px;
+.instagram-card-image img.detail {
+  max-width: 700px;
+}
+
+.instagram-card-image img.feed {
+  max-width: 800px;
+  min-width: 800px;
 }
 
 .instagram-card-content {
-  padding: 15px;
+  padding: 5px 15px;
 }
 
 .content-wrapper {
@@ -155,6 +176,11 @@ ul#preview li img {
 .instagram-bookmark {
   float: right;
   margin-right: 0;
+}
+
+.hashtag {
+    color: #007bff !important;
+    font-weight: 200 !important
 }
 
 .date {

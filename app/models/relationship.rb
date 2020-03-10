@@ -4,4 +4,8 @@ class Relationship < ApplicationRecord
 
   validates :followed_id, presence: true
   validates :follower_id, presence: true
+
+  scope :following_ids, (lambda do |user_id|
+    select(:followed_id).where(follower_id: user_id)
+  end)
 end

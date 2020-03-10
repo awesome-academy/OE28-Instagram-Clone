@@ -31,12 +31,17 @@ en:
       count:
         one: "%{count} error"
         other: "%{count} errors"
+    card_stat:
+      count_like:
+        one: "%{count} Like"
+        other: "%{count} Likes"
   static_pages:
     new:
       title: "Home"
     title: "Home"
     index:
       create_post: Create post
+      new_post: New post
   users:
     create:
       signup_success: "Sign up success!"
@@ -148,7 +153,7 @@ en:
     update:
       update_success: Updated post successfully
       update_fail: Fail to update post. Try again
-    card_content:
+    card_stat:
       count_like:
         one: "%{count} Like"
         other: "%{count} Likes"
