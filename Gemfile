@@ -9,6 +9,7 @@ gem "bootsnap", ">= 1.4.2", require: false
 gem "bootstrap", "~> 4.4", ">= 4.4.1"
 gem "bootstrap4-kaminari-views"
 gem "config"
+gem "devise"
 gem "faker", "~> 2.10", ">= 2.10.2"
 gem "figaro", "~> 1.1", ">= 1.1.1"
 gem "font-awesome-rails"

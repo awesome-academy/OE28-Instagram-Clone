@@ -12,7 +12,8 @@
         </button>
       </div>
       <div class="modal-body details">
-        <%= render partial: "users/form_create", locals: {user: user} %>
+        <%= render partial: "users/form_create", 
+          locals: {resource: resource, resource_name: :sign_up} %>
       </div>
     </div>
   </div>

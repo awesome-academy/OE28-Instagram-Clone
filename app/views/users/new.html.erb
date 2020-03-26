@@ -2,7 +2,8 @@
 <% provide :submit, t(".signup") %>
 <div class="card signup-form m-auto">
   <article class="card-body">
-    <%= link_to  t(".login"), login_path, class: "float-right btn btn-outline-primary" %>
+    <%= link_to  t(".login"), login_path, 
+      class: "float-right btn btn-outline-primary" %>
     <h4 class="card-title mb-4 mt-1"><%= t ".signup" %></h4>
     <hr>
     <%= render partial: "users/form_create", locals: {user: @user} %>

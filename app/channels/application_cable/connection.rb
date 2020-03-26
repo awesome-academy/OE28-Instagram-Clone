@@ -9,8 +9,11 @@ module ApplicationCable
     private
 
     def find_verified_user
-      user_id = cookies.signed[:user_id] || request.session[:user_id]
-      User.find_by(id: user_id) || reject_unauthorized_connection
+      if verified_user = env["warden"].user
+        verified_user
+      else
+        reject_unauthorized_connection
+      end
     end
   end
 end

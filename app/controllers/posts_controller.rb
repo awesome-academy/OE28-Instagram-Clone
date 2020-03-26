@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :log_in_user, except: :index
+  before_action :authenticate_user!, except: :index
   before_action :load_user, only: :index
   before_action :load_post, except: %i(create index)
   before_action :correct_user, only: %i(destroy update edit)
@@ -59,11 +59,24 @@ class PostsController < ApplicationController
 
   private
 
-  def log_in_user
-    return if user_signed_in?
+  def load_post
+    @post = Post.find_by id: params[:id]
+    return if @post
 
-    flash[:danger] = t "login_first"
-    redirect_to login_path
+    flash[:danger] = t "post_not_found"
+    redirect_to root_path
+  end
+  
+  def post_params
+    params.require(:post).permit(:description, images: [])
+  end
+
+  def load_user
+    @user = User.find_by id: params[:user_id]
+    return if @user
+
+    flash[:danger] = t "users.load_user.not_find_user"
+    redirect_to root_path
   end
 
   def correct_user

@@ -57,6 +57,32 @@ vi:
       create_post: Đăng bài
       new_post: Bài viết mới
   users:
+    sessions:
+      new:
+        username_or_email: Username hoặc email
+        password: Mật khẩu
+        log_in: Đăng nhập
+        sign_in: Đăng nhập
+        sign_up: Đăng ký
+        login_via_facebook: Đăng nhập bằng facebook
+        login_via_gmail: Đăng nhập bằng Gmail
+        remember_me: Nhớ tài khoản
+    registrations:
+      new:
+        title: "Đăng ký"
+        signup: "Đăng ký"
+        login: "Đăng nhập"
+        email: "Địa chỉ email"
+        fullname: "Tên đầy đủ"
+        username: "Tên người dùng"
+        choose_file: "Ảnh đại diện"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+        or: "HOẶC"
+        login_via_facebook: "Đăng nhập qua Facebook"
+        remember_me: Nhớ tài khoản
+    create:
+      invalid_message: Sai tên đăng nhập hoặc mật khẩu
     create:
       signup_success: "Đăng ký thành công!"
       signup_failed: "Đăng ký thất bại!"
@@ -66,18 +92,6 @@ vi:
       title: "Đăng ký"
       signup: "Đăng ký"
       login: "Đăng nhập"
-    form_create:
-      title: "Đăng ký"
-      signup: "Đăng ký"
-      login: "Đăng nhập"
-      email: "Địa chỉ email"
-      fullname: "Tên đầy đủ"
-      username: "Tên người dùng"
-      choose_file: "Ảnh đại diện"
-      password: "Mật khẩu"
-      password_confirmation: "Xác nhận mật khẩu"
-      or: "HOẶC"
-      login_via_facebook: "Đăng nhập qua Facebook"
     tab:
       saved: ĐÃ LƯU
       tagged: GẮN THẺ
@@ -118,6 +132,20 @@ vi:
       gender: "Giới tính"
       status: "Trạng thái tài khoản"
       submit: "Gửi thay đổi"
+    form_create:
+      title: "Đăng ký"
+      signup: "Đăng ký"
+      login: "Đăng nhập"
+      email: "Địa chỉ email"
+      fullname: "Tên đầy đủ"
+      submit: "Hoàn tất"
+      username: "Tên người dùng"
+      choose_file: "Ảnh đại diện"
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
+      or: "HOẶC"
+      login_via_facebook: "Đăng nhập qua Facebook"
+      remember_me: Nhớ tài khoản
     destroy:
       destroy: "Xóa"
       admin: "Quản lý"
@@ -152,17 +180,6 @@ vi:
     user:
       follow_not_login: "Theo dõi"
       text: "Bạn phải đăng nhập trước"
-  sessions:
-    new:
-      username_or_email: Username hoặc email
-      password: Mật khẩu
-      log_in: Đăng nhập
-      sign_in: Đăng nhập
-      sign_up: Đăng ký
-      login_via_facebook: Đăng nhập bằng facebook
-      login_via_gmail: Đăng nhập bằng Gmail
-    create:
-      invalid_message: Sai tên đăng nhập hoặc mật khẩu
   follows:
     following:
       title: "Đang theo dõi"
@@ -444,3 +461,29 @@ vi:
       search_post:
         search_place: "Tên người tạo hoặc mô tả ..."
         search: "Tìm kiếm"
+  devise:
+    failure:
+      already_authenticated: "Bạn đã đăng nhập vào hệ thống"
+      invalid: "Sai %{authentication_keys} hoặc mật khẩu."
+      not_found_in_database: "Sai %{authentication_keys} hoặc mật khẩu."
+      timeout: "Phiên làm việc của bạn đã hết. Vui lòng đăng nhập để tiếp tục"
+      unauthenticated: "Bạn cần đăng nhập hoặc đăng ký để tiếp tục."
+    omniauth_callbacks:
+      failure: "Không thể kết nối %{kind} vì \"%{reason}\"."
+      success: "Kết nối tài khoản %{kind} thành công."
+    registrations:
+      signed_up: "Chào mừng! Bạn đã đăng ký thành công."
+    sessions:
+      signed_in: "Đăng nhập thành công."
+      signed_out: "Đăng xuất thành công."
+      already_signed_out: "Đăng xuất thành công."
+  errors:
+    messages:
+      already_confirmed: "was already confirmed, please try signing in"
+      confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
+      expired: "has expired, please request a new one"
+      not_found: "not found"
+      not_locked: "was not locked"
+      not_saved:
+        one: "1 error prohibited this %{resource} from being saved:"
+        other: "%{count} errors prohibited this %{resource} from being saved:"

@@ -1,0 +1,9 @@
+<% provide :title, t(".title") %>
+<div class="card signup-form m-auto">
+  <article class="card-body">
+    <%= link_to t(".login"), new_user_session_path, class: "float-right btn btn-outline-primary" %>
+    <h4 class="card-title mb-4 mt-1"><%= t ".signup" %></h4>
+    <hr>
+    <%= render "users/form_create", resourse: resource %>
+  </article>
+</div>

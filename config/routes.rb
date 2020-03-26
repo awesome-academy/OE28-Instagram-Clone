@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
+  devise_for :users, only: :omniauth_callbacks, controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks'}
   scope "(:locale)", locale: /en|vi/ do
     root "static_pages#index"
     
+    devise_for :users, controllers: {sessions: "users/sessions",
+      registrations: "users/registrations"}, skip: :omniauth_callbacks
+    devise_scope :user do
+      delete "/logout", to: "users/sessions#destroy"
+    end
     get "/feeds", to: "static_pages#index"
     get "/signup", to: "users#new"
     post "/signup", to: "users#create"
-    get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
-    delete "/logout", to: "sessions#destroy"
-    get "/auth/:provider/callback", to: "facebook_login#create"
     
     resources :users do
       resources :posts, only: :index

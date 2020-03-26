@@ -90,6 +90,7 @@ search:
   type: "search"
   char_sharp: "#"
   char_at: "@"
+facebook_auth_path: "/users/auth/facebook"
 default_password: "123456"
 factories:
   user:

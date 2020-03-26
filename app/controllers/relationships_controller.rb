@@ -1,6 +1,6 @@
 class RelationshipsController < ApplicationController
-  before_action :logged_in_user, :load_user
-  before_action :logged_in_user, :load_relationship, only: %i(update destroy)
+  before_action :authenticate_user!, :load_user
+  before_action :load_relationship, only: %i(update destroy)
 
   def create
     params[:status] = params[:status].to_i

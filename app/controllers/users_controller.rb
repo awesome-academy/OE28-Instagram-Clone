@@ -1,25 +1,8 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, except: %i(new create)
-  before_action :load_user, except: %i(new create)
+  before_action :authenticate_user!, :load_user
   before_action :correct_user, only: %i(edit update)
 
-  def new
-    @user = User.new
-  end
-
   def show; end
-
-  def create
-    @user = User.new user_params
-    if @user.save
-      log_in @user
-      flash[:success] = t ".signup_success"
-      redirect_to @user
-    else
-      flash.now[:danger] = t ".signup_failed"
-      render :new
-    end
-  end
 
   def edit; end
 
@@ -36,6 +19,13 @@ class UsersController < ApplicationController
   end
 
   private
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+
+    flash[:danger] = t "users.load_user.not_find_user"
+    redirect_to root_path
+  end
 
   def correct_user
     return if current_user? @user

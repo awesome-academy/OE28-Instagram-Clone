@@ -2,22 +2,20 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   before_action :set_locale
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
   private
+  def configure_permitted_parameters
+    added_attrs = User::USER_PARAMS
+    devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
+  end
+
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end
 
   def default_url_options
     {locale: I18n.locale}
-  end
-
-  def logged_in_user
-    return if user_signed_in?
-
-    store_location
-    flash[:danger] = t "users.logged_in_user.please_log_in"
-    redirect_to login_url
   end
 
   def bookmark_like_params
@@ -57,32 +55,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def user_params
-    params.require(:user).permit User::USER_PARAMS
-  end
-
   def user_params_update
     params.require(:user).permit User::USER_PARAMS_UPDATE
-  end
-
-  def post_params
-    params.require(:post).permit Post::POST_PARAMS
-  end
-
-  def load_user
-    @user = User.find_by id: params[:id] || params[:user_id]
-    return if @user
-
-    flash[:danger] = t "users.load_user.not_find_user"
-    redirect_to root_path
-  end
-
-  def load_post
-    @post = Post.find_by id: params[:id]
-    return if @post
-
-    flash[:danger] = t "post_not_found"
-    redirect_to root_path
   end
 
   def is_admin

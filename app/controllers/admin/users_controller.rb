@@ -1,8 +1,8 @@
 class Admin::UsersController < ApplicationController
-  before_action :logged_in_user, :is_admin
-  before_action :load_user, except: %i(index create)
+  before_action :authenticate_user!, :is_admin
+  before_action :load_user, except: %i(index new create)
   before_action :search, :sort, only: :index
-
+  
   def index
     @users ||= User.order_by_created_at
                    .page(params[:page])
@@ -57,6 +57,13 @@ class Admin::UsersController < ApplicationController
   end
 
   private
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+
+    flash[:danger] = t "users.load_user.not_find_user"
+    redirect_to root_path
+  end
 
   def sort
     return unless params[:type].eql? Settings.sort_user.type

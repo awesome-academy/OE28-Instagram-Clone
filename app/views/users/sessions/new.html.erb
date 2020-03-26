@@ -1,13 +1,13 @@
 <% provide :title, t(".sign_in") %>
 <div class="card login-form">
   <article class="card-body">
-    <%= link_to  t(".sign_up"), signup_path, class: "float-right btn btn-outline-primary" %>
+    <%= link_to  t(".sign_up"), new_user_registration_path, class: "float-right btn btn-outline-primary" %>
     <h4 class="card-title mb-4 mt-1"><%= t ".sign_in" %></h4>
     <hr>
     <% flash.each do |message_type, message| %>
       <%= content_tag :div, message, class: "alert alert-#{message_type}" %>
     <% end %>
-    <%= form_for :session, url: login_path do |f| %>
+      <%= form_for :session, url: user_session_path do |f| %>
       <div class="form-group">
         <%= f.text_field :email_username, class: "form-control",
           placeholder: t(".username_or_email") %>
@@ -23,7 +23,7 @@
           </div>
         </div>
         <%= f.label :remember_me, class: "checkbox inline" do %>
-          <%= f.check_box :remember_me %>
+          <%= f.check_box :remember_me, checked: "checked" %>
           <span><%= t ".remember_me" %></span>
         <% end %>
         <div class="col-md-6 text-right">

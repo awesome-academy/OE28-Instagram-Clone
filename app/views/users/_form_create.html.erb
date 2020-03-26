@@ -1,4 +1,4 @@
-<%= form_for user, url: url_create_user do |f| %>
+<%= form_for resource, as: resource_name, url: user_registration_path do |f| %>
   <% flash.each do |message_type, message| %>
     <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
   <% end %>
@@ -20,12 +20,14 @@
   </div>
   <%= f.hidden_field :uid %>
   <div class="form-group">
-    <%= f.submit yield(:submit), class: "btn btn-primary btn-block" %>
+    <%= f.submit t(".submit"), class: "btn btn-primary btn-block" do %>
+      <%= t ".submit" %>
+    <% end %>
     <div class="row"></div>
   </div>
 <% end %>
 <hr>
-<% unless user.uid || current_user&.admin? %>
+<% unless resource.uid || current_user&.admin? %>
   <p class="text-center">
     <%= t ".or" %>
   </p>

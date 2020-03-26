@@ -1,5 +1,5 @@
 class FollowsController < ApplicationController
-  before_action :load_user
+  before_action :load_user, :authenticate_user!
 
   def following
     @title = t ".title"

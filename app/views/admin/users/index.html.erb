@@ -9,7 +9,8 @@
           data: {toggle: "modal", target: "#new-user"} do %>
           <%= t ".new_user" %>
       <% end %>
-      <%= render partial: "admin/users/new_modal", locals: {user: @user_hash[:user]} %>
+      <%= render partial: "admin/users/new_modal",
+        locals: {resource: @user_hash[:user]} %>
       <%= render "sort_user" %>
     </div>
     <%= render "search_user" %>

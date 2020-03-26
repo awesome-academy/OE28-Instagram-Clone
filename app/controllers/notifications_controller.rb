@@ -1,5 +1,5 @@
 class NotificationsController < ApplicationController
-  before_action :logged_in_user, :load_notification, only: %i(update destroy)
+  before_action :authenticate_user!, :load_notification, only: %i(update destroy)
   before_action :update_all_to_read, only: :update
 
   def index

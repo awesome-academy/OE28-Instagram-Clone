@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   include UserConcern
-
-  attr_accessor :remember_token
+  devise :database_authenticatable, :registerable,
+         :rememberable, :validatable,
+         :omniauthable, omniauth_providers: [:facebook]
   enum gender: {female: 0, male: 1, other: 2}
   enum role: {user: 0, admin: 1}
   enum status: {public_mode: 0, private_mode: 1}
@@ -41,12 +42,8 @@ class User < ApplicationRecord
     uniqueness: {case_sensitive: false}
   validates :phone, allow_blank: true,
     format: {with: Settings.user.phone_regex}
-  validates :password, presence: true,
-    length: {minimum: Settings.user.min_length_password},
-    allow_nil: true
 
   before_save :downcase_email
-  has_secure_password
   has_one_attached :avatar_image
 
   scope :likers_to_likeable, (lambda do |likeable_id, likeable_type|
@@ -66,37 +63,6 @@ class User < ApplicationRecord
   scope :order_by_updated_at, ->{order updated_at: :desc}
   scope :order_by_name, ->{order :name}
   scope :order_by_username, ->{order :username}
-
-  class << self
-    def digest string
-      cost = if ActiveModel::SecurePassword.min_cost
-               BCrypt::Engine::MIN_COST
-             else
-               BCrypt::Engine.cost
-             end
-      BCrypt::Password.create string, cost: cost
-    end
-
-    def new_token
-      SecureRandom.urlsafe_base64
-    end
-  end
-
-  def remember
-    self.remember_token = User.new_token
-    update remember_digest: User.digest(remember_token)
-  end
-
-  def authenticate? attribute, token
-    digest = send "#{attribute}_digest"
-    return false unless digest && token
-
-    BCrypt::Password.new(digest).is_password? token
-  end
-
-  def forget
-    update remember_digest: nil
-  end
 
   def bookmarking? post
     Post.bookmarking_by_user(id).include? post

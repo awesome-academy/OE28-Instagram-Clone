@@ -1,5 +1,5 @@
 class BookmarksController < ApplicationController
-  before_action :logged_in_user, :load_user, :correct_user, only: :index
+  before_action :authenticate_user!, :load_user, :correct_user, only: :index
   before_action :object_exists, :correct_user_like_bookmark, only: %i(create destroy)
   before_action :find_bookmark, only: :destroy
 

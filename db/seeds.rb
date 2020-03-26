@@ -6,14 +6,6 @@ User.create!(email: "viethoang290111hust@gmail.com",
   role: "admin"
 )
 
-User.create!(email: "viethoang290111hust@gmail.com",
-  username: "admin11",
-  name: "Lê Việt Hoàng",
-  password: "123456",
-  password_confirmation: "123456",
-  role: "admin"
-)
-
 User.create!(email: "viethoang29012hust@gmail.com",
   username: "viethoanglee",
   name: "Lê Việt Hoàng",
@@ -21,6 +13,7 @@ User.create!(email: "viethoang29012hust@gmail.com",
   password_confirmation: "123456",
   role: "admin"
 )
+
 
 User.create!(email: "viethoang29012hust@gmail.com",
   username: "viethoanglee",
