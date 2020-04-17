@@ -14,6 +14,7 @@
           placeholder: t(".search")
         %>
       <% end %>
+      <%= render "searches/search_frame" %>
     </div>
     <div class="user-section">
       <%= link_to "#" do %>
@@ -34,10 +35,12 @@
       <% end %>
     </div>
     <div class="dropdown ml-5">
-      <button class="dropbtn dropbtn-language"><%= t ".language" %></button>
+      <button class="dropbtn dropbtn-language">
+        <i class="fa fa-globe"></i>
+      </button>
       <div class="dropdown-content">
-      <%= link_to t(".english"), locale:"en" %>
-      <%= link_to t(".vietnamese"), locale:"vi" %>
+        <%= link_to t(".english"), locale:"en" %>
+        <%= link_to t(".vietnamese"), locale:"vi" %>
       </div>
     </div>
     <% if user_signed_in? && current_user.admin? %>

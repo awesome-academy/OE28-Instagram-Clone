@@ -9,3 +9,4 @@ require("bootstrap");
 require("packs/posts");
 require("packs/notifications");
 require("packs/comments");
+require("packs/search_users");

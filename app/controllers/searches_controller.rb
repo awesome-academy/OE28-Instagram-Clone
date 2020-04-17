@@ -1,5 +1,5 @@
 class SearchesController < ApplicationController
-  before_action :check_blank, :search_user, :search_post, only: :index
+  before_action :get_user, :check_blank, :search_user, :search_post, only: :index
 
   def index
     return if @posts || @users
@@ -11,6 +11,16 @@ class SearchesController < ApplicationController
   end
 
   private
+
+  def get_user
+    return unless params[:username]
+
+    @user = User.find_by username: params[:username]
+    redirect_to(@user) && return if @user
+
+    flash[:danger] = t ".user_not_found"
+    redirect_to root_path
+  end
 
   def check_blank
     @text_search = params[:search]

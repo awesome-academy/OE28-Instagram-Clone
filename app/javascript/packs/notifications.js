@@ -4,6 +4,7 @@ $(document).mouseup(function(e) {
     $('div.notif').removeClass('d-block');
   }
 });
+
 $(document).on('turbolinks:load', function() {
   $('div#notification_icon')
     .unbind('click')

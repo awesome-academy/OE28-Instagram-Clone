@@ -10,9 +10,9 @@
     <%= provide :title, t(".title") %>
     <%= render "searches/search_user" if @users %>
     <%= render "searches/search_post" if @posts %>
-  <button type="button" class="btn btn-primary new-btn" id="load-more" >
-    <%= t "load_more" %>
-  </button>
+    <button type="button" class="btn btn-primary new-btn" id="load-more" >
+      <%= t "load_more" %>
+    </button>
   </div>
 <% end %>
-<%= javascript_pack_tag "search_results", "data-turbolinks-track": "reload" %>
+<%= javascript_pack_tag "search_post", "data-turbolinks-track": "reload" %>

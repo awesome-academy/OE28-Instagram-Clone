@@ -258,7 +258,7 @@ i.fa.fa-flag-checkered {
   display: flex;
   align-items: center;
   margin-top: 4px;
-  padding-left: 0px!important;
+  padding-left: 0px !important;
   flex-grow: 1;
 }
 
@@ -410,19 +410,26 @@ h6.mark_all_read {
   align-items: center;
 }
 
-#load-notifications, #load-more-users-table, #load-more-posts-table,
-#load-notifications:visited, #load-more-users-table:visited {
+#load-notifications,
+#load-more-users-table,
+#load-more-posts-table,
+#load-notifications:visited,
+#load-more-users-table:visited {
   color: $d33739E;
   text-decoration: none;
   display: block;
   margin: 0;
 }
 
-#load-notifications:hover, #load-more-users-table:hover, #load-more-posts-table:hover {
+#load-notifications:hover,
+#load-more-users-table:hover,
+#load-more-posts-table:hover {
   text-decoration: none;
 }
 
-#load-notifications, #load-more-users-table, #load-more-posts-table {
+#load-notifications,
+#load-more-users-table,
+#load-more-posts-table {
   padding: 10px;
   text-align: center;
   background-color: $d33739E;
@@ -437,7 +444,9 @@ h6.mark_all_read {
   -o-transition: all 600ms ease-in-out;
 }
 
-#load-notifications:hover, #load-more-users-table:hover, #load-more-posts-table:hover {
+#load-notifications:hover,
+#load-more-users-table:hover,
+#load-more-posts-table:hover {
   background-color: $white;
   color: $d33739E;
 }
@@ -469,7 +478,7 @@ h6.mark_all_read {
   display: none;
 }
 
-.transparent-btn{
+.transparent-btn {
   background-color: transparent;
   border: none;
 }
@@ -480,11 +489,11 @@ h6.mark_all_read {
 }
 
 .hide-element {
-  display: none
+  display: none;
 }
 
 #load-more-posts {
-  margin-top: 1rem!important;
+  margin-top: 1rem !important;
   margin: 0px auto;
   width: fit-content;
 }
@@ -493,7 +502,8 @@ h6.mark_all_read {
   background-color: $white;
 }
 
-.admin_users, .admin_posts {
+.admin_users,
+.admin_posts {
   display: block;
   color: $white;
   width: 100%;
@@ -501,7 +511,8 @@ h6.mark_all_read {
   text-decoration: none;
 }
 
-.admin_users:hover, .admin_posts:hover {
+.admin_users:hover,
+.admin_posts:hover {
   text-decoration: none;
   color: $white;
 }
@@ -519,7 +530,7 @@ h6.mark_all_read {
 }
 
 table {
-  width: 130%!important;
+  width: 130% !important;
   margin-left: -15%;
 }
 
@@ -541,4 +552,17 @@ table tr th {
 
 .sort_post a:hover {
   text-decoration: none;
+}
+
+.search-box {
+  position: absolute;
+  width: 440px;
+  height: 350px;
+  background-color: $white;
+  -webkit-box-shadow: 3px 4px 5px -2px $rgba214;
+  -moz-box-shadow: 3px 4px 5px -2px $rgba214;
+  box-shadow: 3px 4px 5px -2px $rgba214;
+  display: none;
+  border-radius: 2px;
+  overflow: auto;
 }
