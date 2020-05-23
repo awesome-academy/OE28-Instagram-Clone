@@ -226,7 +226,7 @@ GEM
       activerecord (>= 5.2.1)
     popper_js (1.16.0)
     public_suffix (4.0.3)
-    puma (4.3.3)
+    puma (4.3.5)
       nio4r (~> 2.0)
     rack (2.2.2)
     rack-protection (2.0.8.1)
@@ -404,7 +404,7 @@ DEPENDENCIES
   mysql2 (~> 0.5.3)
   omniauth
   omniauth-facebook
-  puma (~> 4.1)
+  puma (~> 4.3)
   rails (~> 6.0.2, >= 6.0.2.1)
   rails-controller-testing (~> 1.0, >= 1.0.4)
   rails-i18n
